@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智能课程表工具 | 免费在线排课系统</title>
-	<meta name="keywords" content="课程表,在线排课,智能课程表,课程表工具,倾企企服,排课系统,课程安排">
-    <meta name="description" content="倾企企服提供专业的智能课程表工具，支持在线拖拽排课、科目管理、颜色标记、导出图片/Word/Excel等功能。免费使用，操作简单，适用于学校、培训机构、个人学习计划安排。">
-    <meta name="author" content="倾企企服">
-    <meta name="copyright" content="Copyright © 2021-2075 倾企企服 All Rights Reserved">
-    <link rel="stylesheet" href="styles.css?v=20241220">
-    <script src="html2canvas.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css?v=20241221">
+    <script src="js/html2canvas.min.js"></script>
 </head>
 <body>
     <!-- 固定顶部区域 -->
@@ -31,7 +27,7 @@
                         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
                         <line x1="12" y1="17" x2="12.01" y2="17"/>
                     </svg>
-                    查看教程
+                    教程
                 </button>
                 <button id="resetBtn" class="btn secondary">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -85,7 +81,9 @@
                 <div class="backup-dropdown">
                     <button id="backupBtn" class="btn primary">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M19 7l-.867 12.142A2 2 0 0 1 16.138 21H7.862a2 2 0 0 1-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v3M4 7h16"/>
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                         备份数据
                     </button>
@@ -106,6 +104,56 @@
                             </svg>
                             导入数据
                         </button>
+                    </div>
+                </div>
+                <div class="font-dropdown">
+                    <button id="fontBtn" class="btn primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 7V4h16v3"/>
+                            <path d="M9 20h6"/>
+                            <path d="M12 4v16"/>
+                        </svg>
+                        字体
+                    </button>
+                    <div class="font-menu" id="fontMenu">
+                        <button class="font-item" data-font="system">系统默认</button>
+                        <button class="font-item" data-font="microsoft-yahei">微软雅黑</button>
+                        <button class="font-item" data-font="simsun">宋体</button>
+                        <button class="font-item" data-font="heiti">黑体</button>
+                        <button class="font-item" data-font="kaiti">楷体</button>
+                        <button class="font-item" data-font="fangsong">仿宋</button>
+                        <button class="font-item" data-font="xingkai">行楷字体</button>
+                        <button class="font-item" data-font="lishu">隶书字体</button>
+                        <button class="font-item" data-font="kaiti">楷体字体</button>
+                        <button class="font-item" data-font="fangsong">仿宋字体</button>
+                        <button class="font-item" data-font="youyuan">幼圆字体</button>
+                        <button class="font-item" data-font="source-han-sans">思源黑体</button>
+                        <button class="font-item" data-font="source-han-serif">思源宋体</button>
+                        <button class="font-item" data-font="arial">Arial</button>
+                        <button class="font-item" data-font="helvetica">Helvetica</button>
+                        <button class="font-item" data-font="georgia">Georgia</button>
+                        <button class="font-item" data-font="times-new-roman">Times New Roman</button>
+                    </div>
+                </div>
+                <div class="theme-dropdown">
+                    <button id="themeBtn" class="btn primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 1.54l4.24 4.24M20.46 20.46l-4.24-4.24M1.54 20.46l4.24-4.24"/>
+                        </svg>
+                        主题
+                    </button>
+                    <div class="theme-menu" id="themeMenu">
+                        <button class="theme-item" data-theme="default">默认主题</button>
+                        <button class="theme-item" data-theme="blue">蓝色主题</button>
+                        <button class="theme-item" data-theme="purple">紫色主题</button>
+                        <button class="theme-item" data-theme="pink">粉色主题</button>
+                        <button class="theme-item" data-theme="orange">橙色主题</button>
+                        <button class="theme-item" data-theme="dark">深色主题</button>
+                        <div class="custom-color" style="padding: 10px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px;">
+                            <input type="color" id="customColorPicker" value="#4a7c59" style="width: 32px; height: 32px; border: none; cursor: pointer; border-radius: 4px;">
+                            <span style="font-size: 14px; color: var(--text-color);">自定义</span>
+                        </div>
                     </div>
                 </div>
                 <button id="settingsBtn" class="btn primary">
@@ -142,6 +190,9 @@
         <main class="main-content">
             <!-- 左侧栏：课时控制和科目池 -->
             <div class="left-sidebar">
+                <!-- 课时设置主标题 -->
+                <h3 class="section-title">课时设置</h3>
+                
                 <!-- PC端课时控制区域 -->
                 <div class="period-controls-desktop">
                     <div class="period-control-line">
@@ -162,8 +213,10 @@
                 </div>
                 
                 <div class="subject-pool">
+                    <!-- 科目池主标题 -->
+                    <h3 class="section-title">科目池</h3>
                     <div class="subject-pool-header">
-                        <h3>科目池</h3>
+                        <button id="importSubjectBtn" class="btn secondary">导入科目</button>
                         <button id="addSubjectBtn" class="btn primary">+ 科目</button>
                     </div>
                     <div id="subjectPool" class="subjects">
@@ -220,26 +273,66 @@
                 <div class="form-group">
                     <label>颜色</label>
                     <div class="color-options">
-                        <div class="preset-colors">
-                            <div class="color-option" data-color="#FF0000" style="background: #FF0000" title="红色"></div>
-                            <div class="color-option" data-color="#0000FF" style="background: #0000FF" title="蓝色"></div>
-                            <div class="color-option" data-color="#FF69B4" style="background: #FF69B4" title="粉色"></div>
-                            <div class="color-option" data-color="#FFA500" style="background: #FFA500" title="橙色"></div>
-                            <div class="color-option" data-color="#800080" style="background: #800080" title="紫色"></div>
-                            <div class="color-option" data-color="#B8860B" style="background: #B8860B" title="深金色"></div>
-                            <div class="color-option" data-color="#FF4500" style="background: #FF4500" title="橙红色"></div>
-                            <div class="color-option" data-color="#808080" style="background: #808080" title="灰色"></div>
-                            <div class="color-option" data-color="#663399" style="background: #663399" title="深紫色"></div>
-                            <div class="color-option" data-color="#006400" style="background: #006400" title="深绿色"></div>
-                            <div class="color-option" data-color="#000080" style="background: #000080" title="深蓝色"></div>
-                            <div class="color-option" data-color="#4B0082" style="background: #4B0082" title="靛蓝色"></div>
-                            <div class="color-option" data-color="#8B0000" style="background: #8B0000" title="深红色"></div>
-                            <div class="color-option" data-color="#A0522D" style="background: #A0522D" title="棕色"></div>
-                            <div class="color-option" data-color="#2F4F4F" style="background: #2F4F4F" title="深灰色"></div>
+                        <div class="color-type-selector">
+                            <label>
+                                <input type="radio" name="colorType" value="background" checked>
+                                <span>背景色</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="colorType" value="text">
+                                <span>字体色</span>
+                            </label>
+                        </div>
+                        <div class="preset-colors" id="backgroundColors">
+                            <!-- 新设计的18种背景色（适配白色字体）一行6个，共18个 -->
+                            <div class="color-option" data-color="#3498DB" style="background: #3498DB" title="明亮蓝"></div>
+                            <div class="color-option" data-color="#2ECC71" style="background: #2ECC71" title="鲜绿色"></div>
+                            <div class="color-option" data-color="#E74C3C" style="background: #E74C3C" title="亮红色"></div>
+                            <div class="color-option" data-color="#9B59B6" style="background: #9B59B6" title="紫罗兰"></div>
+                            <div class="color-option" data-color="#F39C12" style="background: #F39C12" title="橙黄色"></div>
+                            <div class="color-option" data-color="#1ABC9C" style="background: #1ABC9C" title="青绿色"></div>
+                            
+                            <div class="color-option" data-color="#D35400" style="background: #D35400" title="南瓜橙"></div>
+                            <div class="color-option" data-color="#C0392B" style="background: #C0392B" title="深红色"></div>
+                            <div class="color-option" data-color="#8E44AD" style="background: #8E44AD" title="深紫色"></div>
+                            <div class="color-option" data-color="#2980B9" style="background: #2980B9" title="天蓝色"></div>
+                            <div class="color-option" data-color="#27AE60" style="background: #27AE60" title="森林绿"></div>
+                            <div class="color-option" data-color="#E67E22" style="background: #E67E22" title="胡萝卜橙"></div>
+                            
+                            <div class="color-option" data-color="#16A085" style="background: #16A085" title="海绿色"></div>
+                            <div class="color-option" data-color="#D68910" style="background: #D68910" title="金黄橙"></div>
+                            <div class="color-option" data-color="#A569BD" style="background: #A569BD" title="薰衣草紫"></div>
+                            <div class="color-option" data-color="#5D6D7E" style="background: #5D6D7E" title="石板灰"></div>
+                            <div class="color-option" data-color="#F7DC6F" style="background: #F7DC6F" title="淡黄色"></div>
+                            <div class="color-option" data-color="#85C1E9" style="background: #85C1E9" title="浅蓝色"></div>
+                        </div>
+                        <div class="preset-colors" id="textColors" style="display: none;">
+                            <!-- 新设计的18种字体色（适配白色背景）一行6个，共18个 -->
+                            <div class="color-option" data-color="#2C3E50" style="background: #2C3E50" title="深蓝灰"></div>
+                            <div class="color-option" data-color="#34495E" style="background: #34495E" title="石板灰"></div>
+                            <div class="color-option" data-color="#1B2631" style="background: #1B2631" title="墨黑色"></div>
+                            <div class="color-option" data-color="#154360" style="background: #154360" title="午夜蓝"></div>
+                            <div class="color-option" data-color="#1A5276" style="background: #1A5276" title="深海蓝"></div>
+                            <div class="color-option" data-color="#1B4F72" style="background: #1B4F72" title="海军蓝"></div>
+                            
+                            <div class="color-option" data-color="#0E6251" style="background: #0E6251" title="深松绿"></div>
+                            <div class="color-option" data-color="#145A32" style="background: #145A32" title="墨绿色"></div>
+                            <div class="color-option" data-color="#186A3B" style="background: #186A3B" title="深林绿"></div>
+                            <div class="color-option" data-color="#4A235A" style="background: #4A235A" title="深紫色"></div>
+                            <div class="color-option" data-color="#512E5F" style="background: #512E5F" title="紫罗兰"></div>
+                            <div class="color-option" data-color="#6C3483" style="background: #6C3483" title="葡萄紫"></div>
+                            
+                            <div class="color-option" data-color="#78281F" style="background: #78281F" title="暗红色"></div>
+                            <div class="color-option" data-color="#641E16" style="background: #641E16" title="深酒红"></div>
+                            <div class="color-option" data-color="#7E5109" style="background: #7E5109" title="深土黄"></div>
+                            <div class="color-option" data-color="#000000" style="background: #000000" title="纯黑色"></div>
+                            <div class="color-option" data-color="#1C2833" style="background: #1C2833" title="深炭灰"></div>
+                            <div class="color-option" data-color="#17202A" style="background: #17202A" title="炭黑色"></div>
                         </div>
                         <div class="custom-color">
-                            <label>自定义HEX</label>
-                            <input type="color" id="customColor" value="#FF6B6B">
+                            <label>自定义颜色</label>
+                            <button type="button" id="customColorBtn" class="btn primary">+选择颜色</button>
+                            <input type="color" id="customColor" value="#FF6B6B" style="display: none;">
                             <input type="text" id="customColorText" placeholder="#FF6B6B" maxlength="7">
                         </div>
                     </div>
@@ -357,103 +450,29 @@
     </div>
 
     <!-- 教程弹窗 -->
-    <div id="tutorialModal" class="modal" style="background: rgba(0, 0, 0, 0.7);" onclick="if(event.target===this)app.closeTutorialModal()">
-        <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); margin: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 20px 25px 15px; margin: 0 -25px 20px;">
-                <h3 style="margin: 0; font-size: 24px; color: #333;">📚 课程表使用教程</h3>
-                <button onclick="app.closeTutorialModal()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s;" onmouseover="this.style.background='#f5f5f5'; this.style.color='#333';" onmouseout="this.style.background='none'; this.style.color='#999';">×</button>
+    <div id="tutorialModal" class="modal tutorial-modal" onclick="if(event.target===this)app.closeTutorialModal()">
+        <div class="modal-content tutorial-modal-content">
+            <div class="tutorial-header">
+                <div class="tutorial-header-icon">📚</div>
+                <h3>课程表使用教程</h3>
+                <button class="tutorial-close-btn" onclick="app.closeTutorialModal()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
-            <div class="tutorial-content" style="text-align: left; line-height: 1.8; font-size: 16px; color: #555;">
-                <h4>📋 快速上手指南</h4>
-                <p><strong>🎯 第一步：设置课时</strong></p>
-                <ul>
-                    <li>使用左侧"上午课时"和"下午课时"的 + - 按钮调整每天课程数量</li>
-                    <li>点击时间单元格可修改课时名称（如：第1课时、早读等）和时间</li>
-                    <li>系统会自动保存您的设置</li>
-                </ul>
-
-                <p><strong>📚 第二步：添加科目</strong></p>
-                <ul>
-                    <li>点击左侧"科目池"右上角的"+ 科目"按钮</li>
-                    <li>输入科目名称（如：数学、语文等），可选项填写老师姓名</li>
-                    <li>选择喜欢的颜色标记，点击保存完成添加</li>
-                    <li>点击科目卡片上的 ✏️ 图标可编辑，🗑️ 图标可删除</li>
-                </ul>
-
-                <p><strong>🖱️ 第三步：拖拽排课</strong></p>
-                <ul>
-                    <li>从左侧科目池拖拽任意科目到右侧课程表的空白位置</li>
-                    <li>拖拽过程中会有高亮提示，松开即可完成排课</li>
-                    <li>已安排的课程可点击 🗑️ 图标删除重新安排</li>
-                </ul>
-
-                <h4>📱 手机端使用说明</h4>
-                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                    <p><strong>触屏操作优化：</strong></p>
-                    <ul>
-                        <li>长按科目卡片可快速添加到课程表</li>
-                        <li>双击课程表单元格可快速删除课程</li>
-                        <li>顶部固定区域可随时访问功能按钮</li>
-                        <li>左右滑动可查看完整课程表</li>
-                    </ul>
-                </div>
-
-                <h4>⚡ 高级功能</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0;">
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
-                        <h5 style="margin: 0 0 10px 0; color: #495057;">💾 数据管理</h5>
-                        <ul style="margin: 0; font-size: 14px;">
-                            <li>自动保存到浏览器</li>
-                            <li>一键重置清空数据</li>
-                            <li>支持多端同步使用</li>
-                        </ul>
-                    </div>
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
-                        <h5 style="margin: 0 0 10px 0; color: #495057;">📤 导出分享</h5>
-                        <ul style="margin: 0; font-size: 14px;">
-                            <li>高清图片导出</li>
-                            <li>Word文档生成</li>
-                            <li>Excel表格导出</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>🌟 特色亮点</h4>
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin: 15px 0;">
-                    <h4 style="margin: 0 0 15px 0;">🚀 为什么选择我们？</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        <div>
-                            <strong>✅ 完全免费</strong><br>
-                            <small>无广告，无限制，永久免费使用</small>
-                        </div>
-                        <div>
-                            <strong>📱 完美适配</strong><br>
-                            <small>手机、平板、电脑全平台支持</small>
-                        </div>
-                        <div>
-                            <strong>🎨 个性化</strong><br>
-                            <small>丰富颜色，自定义名称，灵活调整</small>
-                        </div>
-                        <div>
-                            <strong>⚡ 操作简单</strong><br>
-                            <small>拖拽即用，3分钟完成排课</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <button onclick="app.startCreatingTimetable()" class="btn primary" style="font-size: 16px; padding: 12px 30px;">
-                        🎉 立即开始创建课程表
-                    </button>
-                </div>
+            <div id="tutorialContent" class="tutorial-content">
+                <!-- 教程内容将由JavaScript动态生成 -->
             </div>
-            <div class="form-actions" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding: 20px 0 0; margin: 30px 0 10px;">
-                <div style="color: #999; font-size: 14px;">
-                    💡 按 <kbd style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-family: monospace;">ESC</kbd> 键也可以关闭
+            <div class="tutorial-footer">
+                <div class="tutorial-hint">
+                    <span class="hint-icon">💡</span>
+                    按 <kbd>ESC</kbd> 键也可以关闭
                 </div>
-                <div style="display: flex; gap: 10px;">
-                    <button type="button" onclick="app.closeTutorialModal()" class="btn secondary" style="min-width: 100px;">关闭</button>
-                    <button type="button" id="closeTutorialBtn" class="btn primary" style="min-width: 120px;">我知道了</button>
+                <div class="tutorial-actions">
+                    <button type="button" onclick="app.closeTutorialModal()" class="btn secondary">关闭</button>
+                    <button type="button" id="closeTutorialBtn" class="btn primary">我知道了</button>
                 </div>
             </div>
         </div>
@@ -461,6 +480,43 @@
 
     <!-- 隐藏的文件输入元素用于导入数据 -->
     <input type="file" id="importFileInput" accept=".json" style="display: none;">
+    
+    <!-- 自定义确认对话框 -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>确认操作</h3>
+            <div class="confirm-message">
+                <!-- 确认消息将动态设置 -->
+            </div>
+            <div class="form-actions">
+                <button type="button" id="confirmCancelBtn" class="btn secondary">取消</button>
+                <button type="button" id="confirmOkBtn" class="btn danger">确定</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 导入科目模态框 -->
+    <div id="importSubjectModal" class="modal">
+        <div class="modal-content">
+            <h3>导入科目</h3>
+            <form id="importSubjectForm">
+                <div class="form-group">
+                    <label>选择学习阶段</label>
+                    <select id="stageSelect" class="form-control" required>
+                        <option value="">请选择学习阶段</option>
+                        <option value="primary">小学</option>
+                        <option value="junior">初中</option>
+                        <option value="senior">高中</option>
+                        <option value="university">大学</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelImportBtn" class="btn secondary">取消</button>
+                    <button type="submit" class="btn primary">导入</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- 手机端侧边栏菜单 -->
     <div id="mobileSidebar" class="mobile-sidebar">
@@ -552,20 +608,39 @@
                     显示设置
                 </button>
             </div>
+            
+            <div class="sidebar-section">
+                <h4>主题切换</h4>
+                <div class="sidebar-theme-grid">
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="default">默认</button>
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="blue">蓝色</button>
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="purple">紫色</button>
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="pink">粉色</button>
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="orange">橙色</button>
+                    <button class="sidebar-theme-btn" data-action="theme" data-theme="dark">深色</button>
+                </div>
+                <div class="sidebar-custom-color">
+                    <input type="color" id="mobileCustomColorPicker" value="#4a7c59">
+                    <span>自定义主题色</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>字体切换</h4>
+                <div class="sidebar-font-grid">
+                    <button class="sidebar-font-btn" data-action="font" data-font="system">系统默认</button>
+                    <button class="sidebar-font-btn" data-action="font" data-font="microsoft-yahei">微软雅黑</button>
+                    <button class="sidebar-font-btn" data-action="font" data-font="simsun">宋体</button>
+                    <button class="sidebar-font-btn" data-action="font" data-font="heiti">黑体</button>
+                    <button class="sidebar-font-btn" data-action="font" data-font="kaiti">楷体</button>
+                    <button class="sidebar-font-btn" data-action="font" data-font="fangsong">仿宋</button>
+                </div>
+            </div>
         </div>
     </div>
     
     <!-- 侧边栏遮罩层 -->
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
-    <script src="script.js"></script>
-	    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?d1ef5bc4a815f48f6cc66e95c0bd9a92";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+    <script src="js/script.js"></script>
 </body>
 </html>
